@@ -49,7 +49,7 @@ export function Footer() {
           <ul className="space-y-4 text-sm text-foreground/70">
             <li className="flex gap-3"><MapPin size={16} className="mt-0.5 text-gold shrink-0" /><span>Kolkata, West Bengal, India</span></li>
             <li className="flex gap-3"><Phone size={16} className="mt-0.5 text-gold shrink-0" /><span>+91 98 0000 0000</span></li>
-            <li className="flex gap-3"><Mail size={16} className="mt-0.5 text-gold shrink-0" /><span>concierge@harshartirealty.in</span></li>
+            <li className="flex gap-3"><Mail size={16} className="mt-0.5 text-gold shrink-0" /><span>sales@harshartirealty.in</span></li>
           </ul>
         </div>
       </div>

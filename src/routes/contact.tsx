@@ -47,7 +47,7 @@ function Contact() {
             <div className="space-y-4">
               {[
                 { i: Phone, t: "Call", d: "+91 98 0000 0000", s: "Mon–Sat · 10am – 8pm IST" },
-                { i: Mail, t: "Write", d: "concierge@harshartirealty.in", s: "Replies within 4 hours" },
+                { i: Mail, t: "Write", d: "sales@harshartirealty.in", s: "Replies within 4 hours" },
                 { i: MessageCircle, t: "WhatsApp", d: "Tap to chat", s: "Quickest channel" },
                 { i: Calendar, t: "Appointment", d: "Book a private viewing", s: "On-site or virtual" },
                 { i: MapPin, t: "Office", d: "Kolkata, West Bengal", s: "Visits by appointment" },
