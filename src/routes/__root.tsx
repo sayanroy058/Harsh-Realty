@@ -4,12 +4,8 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
-import { type ReactNode } from "react";
 
-import appCss from "../styles.css?url";
 import { Nav } from "../components/site/Nav";
 import { Footer } from "../components/site/Footer";
 import { SmoothScroll } from "../components/site/SmoothScroll";
@@ -72,47 +68,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Harshaarti Realty — Rare Addresses, Curated" },
-      { name: "description", content: "Harshaarti Realty curates rare residential addresses across Kolkata and India's most coveted growth corridors." },
-      { name: "author", content: "Harsh Arti Realty Pvt. Ltd." },
-      { property: "og:title", content: "Harshaarti Realty — Rare Addresses, Curated" },
-      { property: "og:description", content: "Harshaarti Realty curates rare residential addresses across Kolkata and India's most coveted growth corridors." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Harshaarti Realty — Rare Addresses, Curated" },
-      { name: "twitter:description", content: "Harshaarti Realty curates rare residential addresses across Kolkata and India's most coveted growth corridors." },
-    ],
-    links: [
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
