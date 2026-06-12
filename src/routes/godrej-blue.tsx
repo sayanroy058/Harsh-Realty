@@ -15,7 +15,7 @@ export const Route = createFileRoute("/godrej-blue")({
       { title: "Godrej Blue — A residence borrowed from the water" },
       { name: "description", content: "Waterfront luxury residences. Glass architecture, liquid interiors, premium living." },
       { property: "og:title", content: "Godrej Blue" },
-      { property: "og:description", content: "A flagship waterfront experience by Harshaarti Realty." },
+      { property: "og:description", content: "A flagship waterfront experience by HarshArti Realty." },
       { property: "og:image", content: godrej },
     ],
   }),

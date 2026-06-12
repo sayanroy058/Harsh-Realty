@@ -8,7 +8,7 @@ import { useState } from "react";
 export const Route = createFileRoute("/locations")({
   head: () => ({
     meta: [
-      { title: "Locations — Harshaarti Realty" },
+      { title: "Locations — HarshArti Realty" },
       { name: "description", content: "Explore Kolkata's premium corridors — connectivity, infrastructure and investment outlook." },
     ],
   }),

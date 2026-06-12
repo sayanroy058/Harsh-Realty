@@ -10,9 +10,9 @@ import interior from "@/assets/interior-1.jpg";
 export const Route = createFileRoute("/ongoing")({
   head: () => ({
     meta: [
-      { title: "Ongoing Projects — Harshaarti Realty" },
+      { title: "Ongoing Projects — HarshArti Realty" },
       { name: "description", content: "Active developments under construction across Kolkata, with live progress tracking." },
-      { property: "og:title", content: "Ongoing Projects — Harshaarti Realty" },
+      { property: "og:title", content: "Ongoing Projects — HarshArti Realty" },
       { property: "og:description", content: "Live construction progress and completion forecasts." },
     ],
   }),

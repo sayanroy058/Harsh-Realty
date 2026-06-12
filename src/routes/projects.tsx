@@ -12,9 +12,9 @@ import { ArrowUpRight } from "lucide-react";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Harshaarti Realty" },
+      { title: "Projects — HarshArti Realty" },
       { name: "description", content: "Explore curated residential projects across Kolkata's premium corridors." },
-      { property: "og:title", content: "Projects — Harshaarti Realty" },
+      { property: "og:title", content: "Projects — HarshArti Realty" },
       { property: "og:description", content: "Apartments, villas and townships across Kolkata." },
     ],
   }),

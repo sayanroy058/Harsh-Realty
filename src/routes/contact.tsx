@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, MessageCircle, Calendar } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Harshaarti Realty" },
+      { title: "Contact — HarshArti Realty" },
       { name: "description", content: "Reach our concierge. Private appointments, callbacks and WhatsApp." },
     ],
   }),

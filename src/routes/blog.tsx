@@ -9,7 +9,7 @@ import vinayak from "@/assets/vinayak-hero.jpg";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Insights — Harshaarti Realty" },
+      { title: "Insights — HarshArti Realty" },
       { name: "description", content: "Market insights, real-estate trends and editorial dispatches from our research desk." },
     ],
   }),

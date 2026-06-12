@@ -14,7 +14,7 @@ import { X } from "lucide-react";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Harshaarti Realty" },
+      { title: "Gallery — HarshArti Realty" },
       { name: "description", content: "Cinematic photography from our residences, towers and drone walkthroughs." },
     ],
   }),

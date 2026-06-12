@@ -15,9 +15,9 @@ import { properties, flagships } from "@/lib/properties";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Harshaarti Realty — Rare Addresses, Curated" },
+      { title: "HarshArti Realty — Rare Addresses, Curated" },
       { name: "description", content: "A private real-estate practice curating premium apartments, villas and townships across Kolkata and India." },
-      { property: "og:title", content: "Harshaarti Realty" },
+      { property: "og:title", content: "HarshArti Realty" },
       { property: "og:description", content: "Rare addresses, curated for connoisseurs of space, light and location." },
     ],
   }),
@@ -81,7 +81,7 @@ function Hero() {
             className="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8"
           >
             <p className="max-w-md text-foreground/70 text-sm md:text-base leading-relaxed">
-              Harshaarti Realty is a concierge for connoisseurs of space, light and location. Apartments, villas and townships across Kolkata and India's most coveted corridors.
+              HarshArti Realty is a concierge for connoisseurs of space, light and location. Apartments, villas and townships across Kolkata and India's most coveted corridors.
             </p>
             <div className="flex gap-4">
               <Link to="/projects" className="group inline-flex items-center gap-2 rounded-full bg-gold text-ink px-6 py-3 text-sm uppercase tracking-[0.2em] hover:bg-gold-soft transition-all">

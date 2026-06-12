@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Harshaarti Realty" },
+      { title: "Careers — HarshArti Realty" },
       { name: "description", content: "Join a private real-estate practice in Kolkata. Open roles and culture." },
     ],
   }),

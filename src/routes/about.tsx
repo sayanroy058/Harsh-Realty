@@ -8,9 +8,9 @@ import tower from "@/assets/tower-night.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Harshaarti Realty" },
+      { title: "About — HarshArti Realty" },
       { name: "description", content: "A private real-estate practice founded in Kolkata, curating premium residences with stewardship and discretion." },
-      { property: "og:title", content: "About Harshaarti Realty" },
+      { property: "og:title", content: "About HarshArti Realty" },
       { property: "og:description", content: "Our story, vision and the people behind the practice." },
     ],
   }),

@@ -11,9 +11,9 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute("/completed")({
   head: () => ({
     meta: [
-      { title: "Completed Projects — Harshaarti Realty" },
+      { title: "Completed Projects — HarshArti Realty" },
       { name: "description", content: "Delivered residences and the families now living in them — success stories from across Kolkata." },
-      { property: "og:title", content: "Completed Projects — Harshaarti Realty" },
+      { property: "og:title", content: "Completed Projects — HarshArti Realty" },
       { property: "og:description", content: "Before-and-after, testimonials and finished addresses." },
     ],
   }),

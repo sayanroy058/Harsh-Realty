@@ -14,7 +14,7 @@ export const Route = createFileRoute("/vinayak-21-acres")({
       { title: "Vinayak 21 Acres — A township woven into the land" },
       { name: "description", content: "21 acres of green-belt township living. Plots, masterplan and lifestyle." },
       { property: "og:title", content: "Vinayak 21 Acres" },
-      { property: "og:description", content: "A flagship township by Harshaarti Realty — nature, openness, slow luxury." },
+      { property: "og:description", content: "A flagship township by HarshArti Realty — nature, openness, slow luxury." },
       { property: "og:image", content: vinayak },
     ],
   }),
