@@ -3,9 +3,12 @@ import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { properties } from "@/lib/properties";
 import { motion } from "framer-motion";
-import tower from "@/assets/tower-night.jpg";
-import heroCity from "@/assets/hero-city.jpg";
-import interior from "@/assets/interior-1.jpg";
+import miraniaEvara from "@/assets/Properties/Mirania_Evara.jpg";
+import merlinNiyasa from "@/assets/Properties/Merlin Niyasa.webp";
+import nidhara from "@/assets/Properties/Nidhara.jpg";
+import psAurus from "@/assets/Properties/PS Aurus.jpg";
+import psSansara from "@/assets/Properties/PS Sansara.jpg";
+import psQuintessa from "@/assets/Properties/PS Quintessa.avif";
 
 export const Route = createFileRoute("/ongoing")({
   head: () => ({
@@ -21,7 +24,15 @@ export const Route = createFileRoute("/ongoing")({
 
 function Ongoing() {
   const list = properties.filter((p) => p.status === "ongoing");
-  const imgs = [tower, heroCity, interior];
+  const imgs = {
+    "mirania-evara": miraniaEvara,
+    "merlin-niyasa": merlinNiyasa,
+    nidhara,
+    "ps-aurus": psAurus,
+    "ps-sansara": psSansara,
+    "ps-quintessa": psQuintessa,
+  } as const;
+
   return (
     <>
       <PageHero eyebrow="Active developments" title={<>Under <span className="italic text-gradient-gold">construction</span>.</>}>
@@ -37,7 +48,7 @@ function Ongoing() {
                 <Link to="/projects/$slug" params={{ slug: p.slug }} className="group block glass rounded-3xl overflow-hidden hover:border-gold/40 transition-all">
                   <div className="grid md:grid-cols-[1fr_2fr] gap-0">
                     <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden">
-                      <img src={imgs[i % 3]} alt={p.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                      <img src={imgs[p.slug as keyof typeof imgs]} alt={p.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                     </div>
                     <div className="p-8 md:p-10">
                       <div className="flex justify-between items-start gap-4 flex-wrap">

@@ -2,9 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { properties } from "@/lib/properties";
-import interior from "@/assets/interior-1.jpg";
-import tower from "@/assets/tower-night.jpg";
-import heroCity from "@/assets/hero-city.jpg";
+import nprVisaaya from "@/assets/Properties/NPR_Visaya.avif";
+import primarcAadvika from "@/assets/Properties/Primiarc Aadvika.webp";
+import miraniaEvara from "@/assets/Properties/Mirania_Evara.jpg";
+import merlinNiyasa from "@/assets/Properties/Merlin Niyasa.webp";
+import nidhara from "@/assets/Properties/Nidhara.jpg";
+import psAurus from "@/assets/Properties/PS Aurus.jpg";
+import psSansara from "@/assets/Properties/PS Sansara.jpg";
+import psQuintessa from "@/assets/Properties/PS Quintessa.avif";
+import merlinFResidencies from "@/assets/Properties/Merlin F Residencies.jpg";
+import psNavyom from "@/assets/Properties/PS Navyom.jpg";
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -22,7 +29,18 @@ export const Route = createFileRoute("/projects")({
 });
 
 const filters = ["All", "New Launch", "Ongoing", "Completed"] as const;
-const imgs = [interior, tower, heroCity];
+const imgs = {
+  "npr-visaaya": nprVisaaya,
+  "primarc-aadvika": primarcAadvika,
+  "mirania-evara": miraniaEvara,
+  "merlin-niyasa": merlinNiyasa,
+  nidhara,
+  "ps-aurus": psAurus,
+  "ps-sansara": psSansara,
+  "ps-quintessa": psQuintessa,
+  "merlin-f-residencies": merlinFResidencies,
+  "ps-navyom": psNavyom,
+} as const;
 
 function Projects() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("All");
@@ -68,10 +86,10 @@ function Projects() {
               transition={{ duration: 0.5 }}
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              {list.map((p, i) => (
+              {list.map((p) => (
                 <Link key={p.slug} to="/projects/$slug" params={{ slug: p.slug }} className="group block">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-                    <img src={imgs[i % 3]} alt={p.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <img src={imgs[p.slug as keyof typeof imgs]} alt={p.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
                     <span className="absolute top-4 left-4 rounded-full bg-ink/60 backdrop-blur border border-gold/30 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold">
                       {p.status === "new-launch" ? "New Launch" : p.status}

@@ -2,11 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroCity from "@/assets/hero-city.jpg";
-import interior from "@/assets/interior-1.jpg";
 import tower from "@/assets/tower-night.jpg";
-import vinayak from "@/assets/vinayak-hero.jpg";
-import godrej from "@/assets/godrej-hero.jpg";
 import sarayu from "@/assets/sarayu-hero.jpg";
+import vinayak from "@/assets/Properties/Vinayanak21Acres.webp";
+import godrej from "@/assets/Properties/GodrejBlues.jpg";
+import nprVisaaya from "@/assets/Properties/NPR_Visaya.avif";
+import primarcAadvika from "@/assets/Properties/Primiarc Aadvika.webp";
+import miraniaEvara from "@/assets/Properties/Mirania_Evara.jpg";
+import merlinNiyasa from "@/assets/Properties/Merlin Niyasa.webp";
+import nidhara from "@/assets/Properties/Nidhara.jpg";
+import psAurus from "@/assets/Properties/PS Aurus.jpg";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Reveal, FadeIn } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
@@ -206,6 +211,15 @@ function Flagships() {
 
 function Showcase() {
   const featured = properties.slice(0, 6);
+  const imgs = {
+    "npr-visaaya": nprVisaaya,
+    "primarc-aadvika": primarcAadvika,
+    "mirania-evara": miraniaEvara,
+    "merlin-niyasa": merlinNiyasa,
+    nidhara,
+    "ps-aurus": psAurus,
+  } as const;
+
   return (
     <section className="relative py-32 px-6 bg-[oklch(0.11_0.02_250)]">
       <div className="mx-auto max-w-7xl">
@@ -226,7 +240,7 @@ function Showcase() {
               <Link to="/projects/$slug" params={{ slug: p.slug }} className="group block">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                   <img
-                    src={i % 3 === 0 ? interior : i % 3 === 1 ? tower : heroCity}
+                    src={imgs[p.slug as keyof typeof imgs]}
                     alt={p.name}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -260,9 +274,7 @@ function Showcase() {
 
 function Journey() {
   const items = [
-    { year: "2012", t: "Founded in Kolkata", d: "A private brokerage with a single belief: addresses are heirlooms." },
-    { year: "2016", t: "First flagship", d: "Curated our first 50-unit luxury tower on EM Bypass." },
-    { year: "2020", t: "Beyond Bengal", d: "Expanded representation to pan-India developments." },
+    { year: "2010", t: "Founded in Kolkata", d: "A private brokerage with a single belief: addresses are heirlooms." },
     { year: "2024", t: "Digital concierge", d: "Launched the cinematic experience you are reading now." },
   ];
   return (
@@ -313,7 +325,7 @@ function Investment() {
               We help private buyers, NRIs and family offices identify residences with rare combinations of micro-market, build quality and developer pedigree.
             </p>
             <div className="mt-10 grid grid-cols-3 gap-6">
-              {[["IRR", "12–18%"], ["Horizon", "5–7 yr"], ["Cycle", "Off-market"]].map(([k, v]) => (
+              {[["IRR", "20–25%"], ["Horizon", "5–7 yr"], ["Cycle", "Off-market"]].map(([k, v]) => (
                 <div key={k}>
                   <p className="text-[10px] tracking-[0.3em] text-foreground/40 uppercase">{k}</p>
                   <p className="mt-2 font-display text-xl text-gold">{v}</p>
