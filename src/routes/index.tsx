@@ -274,8 +274,8 @@ function Showcase() {
 
 function Journey() {
   const items = [
-    { year: "2010", t: "Founded in Kolkata", d: "A private brokerage with a single belief: addresses are heirlooms." },
-    { year: "2024", t: "Digital concierge", d: "Launched the cinematic experience you are reading now." },
+    { year: "2010", t: "Real Estate Journey Started", d: "A private brokerage with a single belief: addresses are heirlooms." },
+    { year: "2024", t: "HA Realty Founded", d: "Launched the cinematic experience you are reading now." },
   ];
   return (
     <section className="relative py-32 px-6">
