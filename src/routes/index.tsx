@@ -274,8 +274,8 @@ function Showcase() {
 
 function Journey() {
   const items = [
-    { year: "2010", t: "Real Estate Journey Started", d: "A private brokerage with a single belief: addresses are heirlooms." },
-    { year: "2024", t: "HA Realty Founded", d: "Launched the cinematic experience you are reading now." },
+    { year: "2010", t: "Real Estate Journey Started", d: "Took the first step into real estate with a vision to help families find homes that stand the test of time." },
+    { year: "2024", t: "HA Realty Founded", d: "Established HA Realty to deliver a refined, client-first experience rooted in trust, integrity, and lasting value." },
   ];
   return (
     <section className="relative py-32 px-6">
