@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
-import { Mail, Phone, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook, Linkedin, MapPin } from "lucide-react";
 
 const navLinks = [
   ["About", "/about"],
@@ -76,6 +76,10 @@ export function Footer() {
               <Mail size={11} className="text-gold/60" />
               sales@harshartirealty.in
             </a>
+            <p className="flex items-start gap-2 text-xs text-foreground/45">
+              <MapPin size={11} className="text-gold/60 mt-0.5 shrink-0" />
+              Aurora Waterfront, GN 34/1, GN BLOCK, Salt lake Sector -V, 16th Floor, Unit - 1622, Beside IEM Ashram Building, Kolkata - 700091
+            </p>
             <Link
               to="/contact"
               className="mt-2 self-start rounded-full border border-gold/35 px-5 py-2 text-[10px] uppercase tracking-[0.2em] text-gold hover:bg-gold hover:text-ink transition-all duration-300"

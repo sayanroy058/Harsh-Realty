@@ -50,7 +50,7 @@ function Contact() {
                 { i: Mail, t: "Write", d: "sales@harshartirealty.in", s: "Replies within 4 hours" },
                 { i: MessageCircle, t: "WhatsApp", d: "Tap to chat", s: "Quickest channel" },
                 { i: Calendar, t: "Appointment", d: "Book a private viewing", s: "On-site or virtual" },
-                { i: MapPin, t: "Office", d: "Kolkata, West Bengal", s: "Visits by appointment" },
+                { i: MapPin, t: "Office", d: "Aurora Waterfront, GN 34/1, GN BLOCK, Salt lake Sector -V, 16th Floor, Unit - 1622, Beside IEM Ashram Building, Kolkata - 700091", s: "Visits by appointment" },
               ].map(({ i: Icon, t, d, s }) => (
                 <div key={t} className="glass rounded-2xl p-6 flex items-start gap-5 hover:border-gold/40 transition-all">
                   <span className="grid h-12 w-12 place-items-center rounded-full bg-gold/15 text-gold shrink-0"><Icon size={18} /></span>
