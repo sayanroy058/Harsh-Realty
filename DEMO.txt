@@ -1,0 +1,11 @@
+PROPERTY DETAILS NOT AVAILABLE IN WEBSITE PROJECTS.xlsx
+
+1. PS Aurus — RERA number is blank.
+2. PS Navyom — RERA number is blank.
+
+NOTES
+
+- PS Navyom's Configuration cell is blank. Its configuration is shown as “4 BHK, 6 BHK” on the website because those configurations are explicitly listed in the workbook's Sizes With Price cell.
+- PS Aurus and PS Navyom have no numeric prices in the workbook; both are correctly displayed as “Price on request.”
+- “UC” has been expanded to “Under Construction” and “RTM” to “Ready to Move.”
+- Minor spacing, capitalization, unit formatting, and the obvious “Onward)s” typo were normalized without changing the supplied values.

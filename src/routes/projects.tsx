@@ -1,17 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { Reveal } from "@/components/site/Reveal";
 import { properties } from "@/lib/properties";
-import nprVisaaya from "@/assets/Properties/NPR_Visaya.avif";
-import primarcAadvika from "@/assets/Properties/Primiarc Aadvika.webp";
-import miraniaEvara from "@/assets/Properties/Mirania_Evara.jpg";
-import merlinNiyasa from "@/assets/Properties/Merlin Niyasa.webp";
-import nidhara from "@/assets/Properties/Nidhara.jpg";
-import psAurus from "@/assets/Properties/PS Aurus.jpg";
-import psSansara from "@/assets/Properties/PS Sansara.jpg";
-import psQuintessa from "@/assets/Properties/PS Quintessa.avif";
-import merlinFResidencies from "@/assets/Properties/Merlin F Residencies.jpg";
-import psNavyom from "@/assets/Properties/PS Navyom.jpg";
+import { propertyImages } from "@/lib/propertyImages";
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -20,40 +10,43 @@ export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
       { title: "Projects — HarshArti Realty" },
-      { name: "description", content: "Explore curated residential projects across Kolkata's premium corridors." },
+      {
+        name: "description",
+        content:
+          "Explore curated residential projects across Kolkata's premium corridors.",
+      },
       { property: "og:title", content: "Projects — HarshArti Realty" },
-      { property: "og:description", content: "Apartments, villas and townships across Kolkata." },
+      {
+        property: "og:description",
+        content: "Apartments, villas and townships across Kolkata.",
+      },
     ],
   }),
   component: Projects,
 });
 
-const filters = ["All", "New Launch", "Ongoing", "Completed"] as const;
-const imgs = {
-  "npr-visaaya": nprVisaaya,
-  "primarc-aadvika": primarcAadvika,
-  "mirania-evara": miraniaEvara,
-  "merlin-niyasa": merlinNiyasa,
-  nidhara,
-  "ps-aurus": psAurus,
-  "ps-sansara": psSansara,
-  "ps-quintessa": psQuintessa,
-  "merlin-f-residencies": merlinFResidencies,
-  "ps-navyom": psNavyom,
-} as const;
+const filters = ["All", "Ongoing", "Completed"] as const;
 
 function Projects() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("All");
 
   const list = useMemo(() => {
     if (filter === "All") return properties;
-    const map = { "New Launch": "new-launch", "Ongoing": "ongoing", "Completed": "completed" } as const;
+    const map = { Ongoing: "ongoing", Completed: "completed" } as const;
     return properties.filter((p) => p.status === map[filter]);
   }, [filter]);
 
   return (
     <>
-      <PageHero eyebrow="Portfolio" title={<>A <span className="italic text-gradient-gold">considered</span> portfolio.</>}>
+      <PageHero
+        eyebrow="Portfolio"
+        title={
+          <>
+            A <span className="italic text-gradient-gold">considered</span>{" "}
+            portfolio.
+          </>
+        }
+      >
         Each project below is one we represent personally. Use the filters to
         traverse by stage, or open any residence for a fuller dossier.
       </PageHero>
@@ -66,11 +59,17 @@ function Projects() {
                 key={f}
                 onClick={() => setFilter(f)}
                 className={`relative rounded-full px-5 py-2 text-xs tracking-[0.2em] uppercase transition-colors ${
-                  filter === f ? "text-ink" : "text-foreground/70 hover:text-gold"
+                  filter === f
+                    ? "text-ink"
+                    : "text-foreground/70 hover:text-gold"
                 }`}
               >
                 {filter === f && (
-                  <motion.span layoutId="filter-bg" className="absolute inset-0 rounded-full bg-gold" transition={{ type: "spring", bounce: 0.2 }} />
+                  <motion.span
+                    layoutId="filter-bg"
+                    className="absolute inset-0 rounded-full bg-gold"
+                    transition={{ type: "spring", bounce: 0.2 }}
+                  />
                 )}
                 <span className="relative">{f}</span>
               </button>
@@ -87,25 +86,41 @@ function Projects() {
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {list.map((p) => (
-                <Link key={p.slug} to="/projects/$slug" params={{ slug: p.slug }} className="group block">
+                <Link
+                  key={p.slug}
+                  to="/projects/$slug"
+                  params={{ slug: p.slug }}
+                  className="group block"
+                >
                   <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-                    <img src={imgs[p.slug as keyof typeof imgs]} alt={p.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <img
+                      src={propertyImages[p.slug]}
+                      alt={p.name}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
                     <span className="absolute top-4 left-4 rounded-full bg-ink/60 backdrop-blur border border-gold/30 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold">
-                      {p.status === "new-launch" ? "New Launch" : p.status}
+                      {p.statusLabel}
                     </span>
                     <span className="absolute top-4 right-4 grid h-9 w-9 place-items-center rounded-full bg-gold/0 border border-gold/40 text-gold transition-all group-hover:bg-gold group-hover:text-ink group-hover:rotate-45">
                       <ArrowUpRight size={14} />
                     </span>
                     <div className="absolute bottom-0 inset-x-0 p-6">
-                      <p className="text-[10px] tracking-[0.3em] text-gold uppercase mb-2">{p.location}</p>
-                      <h3 className="font-display text-2xl group-hover:text-gold transition-colors">{p.name}</h3>
+                      <p className="text-[10px] tracking-[0.3em] text-gold uppercase mb-2">
+                        {p.location}
+                      </p>
+                      <h3 className="font-display text-2xl group-hover:text-gold transition-colors">
+                        {p.name}
+                      </h3>
                       <div className="mt-4 flex justify-between items-end text-xs text-foreground/70">
                         <div>
                           <p>{p.bhk}</p>
                           <p className="mt-1">{p.area}</p>
                         </div>
-                        <p className="font-display text-lg text-gold">{p.price}</p>
+                        <p className="font-display text-lg text-gold">
+                          {p.price}
+                        </p>
                       </div>
                     </div>
                   </div>
