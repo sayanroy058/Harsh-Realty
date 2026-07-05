@@ -562,9 +562,9 @@ export const flagships = [
 ] as const;
 
 export const locations = [
-  { name: "EM Bypass", count: 5 },
-  { name: "Howrah", count: 2 },
-  { name: "New Alipore", count: 1 },
-  { name: "Alipore", count: 1 },
-  { name: "Rajarhat", count: 1 },
+  { name: "EM Bypass", count: 5, slugs: ["npr-visaaya", "mirania-evara", "merlin-niyasa", "ps-aurus", "ps-quintessa"] },
+  { name: "Howrah", count: 2, slugs: ["primarc-aadvika", "ps-sansara"] },
+  { name: "New Alipore", count: 1, slugs: ["nidhara"] },
+  { name: "Alipore", count: 1, slugs: ["ps-navyom"] },
+  { name: "Rajarhat", count: 1, slugs: ["merlin-f-residencies"] },
 ];

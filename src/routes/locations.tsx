@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
-import { locations } from "@/lib/properties";
-import { TrendingUp, Train, Plane, Building2 } from "lucide-react";
+import { locations, properties } from "@/lib/properties";
+import { TrendingUp, Building2 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/locations")({
   head: () => ({
@@ -106,22 +107,32 @@ function Locations() {
 
       <section className="px-6 py-24">
         <div className="mx-auto max-w-7xl grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {locations.map((l, i) => (
-            <Reveal key={l.name} delay={i * 0.05}>
-              <div className="glass rounded-2xl p-7 group hover:border-gold/50 transition-all h-full">
-                <div className="flex justify-between items-start mb-6">
-                  <h3 className="font-display text-2xl">{l.name}</h3>
-                  <span className="font-display text-3xl text-gold">{String(l.count).padStart(2, "0")}</span>
+          {locations.map((l, i) => {
+            const projects = properties.filter((p) => l.slugs.includes(p.slug));
+            return (
+              <Reveal key={l.name} delay={i * 0.05}>
+                <div className="glass rounded-2xl p-7 group hover:border-gold/50 transition-all h-full">
+                  <div className="flex justify-between items-start mb-6">
+                    <h3 className="font-display text-2xl">{l.name}</h3>
+                    <span className="font-display text-3xl text-gold">{String(l.count).padStart(2, "0")}</span>
+                  </div>
+                  <div className="space-y-3 text-sm text-foreground/65">
+                    {projects.map((p) => (
+                      <Link
+                        key={p.slug}
+                        to="/projects/$slug"
+                        params={{ slug: p.slug }}
+                        className="flex items-center gap-3 hover:text-gold transition-colors"
+                      >
+                        <Building2 size={14} className="text-gold shrink-0" /> {p.name}
+                      </Link>
+                    ))}
+                    <p className="flex items-center gap-3 pt-1"><TrendingUp size={14} className="text-gold" /> Growth · {8 + (i*2)}% YoY</p>
+                  </div>
                 </div>
-                <div className="space-y-3 text-sm text-foreground/65">
-                  <p className="flex items-center gap-3"><Train size={14} className="text-gold" /> Metro within 1 km</p>
-                  <p className="flex items-center gap-3"><Plane size={14} className="text-gold" /> Airport · 25 min</p>
-                  <p className="flex items-center gap-3"><Building2 size={14} className="text-gold" /> Schools & malls nearby</p>
-                  <p className="flex items-center gap-3"><TrendingUp size={14} className="text-gold" /> Growth · {8 + (i*2)}% YoY</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </section>
     </>
