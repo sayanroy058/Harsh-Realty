@@ -26,6 +26,10 @@ export type Property = {
     heading: string;
     paragraphs: string[];
   };
+  brochures?: {
+    label: string;
+    file: string;
+  }[];
 };
 
 export const properties: Property[] = [
@@ -78,6 +82,9 @@ export const properties: Property[] = [
         "With prices starting from ₹4.68 Cr onwards, Visaaya presents an unparalleled opportunity to experience luxury living at its finest. Welcome home to Visaaya—where luxury meets tranquility, and every moment is filled with bliss.",
       ],
     },
+    brochures: [
+      { label: "NPR Visaaya Brochure", file: "NPR Visaaya Brochure.pdf" },
+    ],
   },
   {
     slug: "primarc-aadvika",
@@ -123,6 +130,10 @@ export const properties: Property[] = [
         "If you're looking for a luxurious, well-connected, and scenic home in Howrah, Primarc Aadvika is the address you should explore. Experience riverside living at its finest—where nature, luxury, and connectivity meet. Visit the site or download the brochure today to discover exclusive offers and floor plans, and make Primarc Aadvika your next prestigious address in Kolkata.",
       ],
     },
+    brochures: [
+      { label: "Aadvika Digital Book", file: "Aadvika Book_Digital.pdf" },
+      { label: "Aadvika Plans Book", file: "Aadvika Plans Book.pdf" },
+    ],
   },
   {
     slug: "mirania-evara",
@@ -160,6 +171,9 @@ export const properties: Property[] = [
         "With its blend of location, design, and trusted development standards, Mirania Evara offers a compelling opportunity for homebuyers and investors alike looking to establish themselves along one of Kolkata's most sought-after arterial roads.",
       ],
     },
+    brochures: [
+      { label: "Mirania Evara Booklet", file: "Mirania Evara Booklet.pdf" },
+    ],
   },
   {
     slug: "merlin-niyasa",
@@ -209,6 +223,7 @@ export const properties: Property[] = [
         "Public transportation is readily available, with metro stations and bus services nearby, providing seamless connectivity to the rest of Kolkata. As Ruby continues to evolve into a thriving locality, Merlin Niyasa stands out as a promising investment for individuals and families looking for a harmonious blend of accessibility and urban conveniences.",
       ],
     },
+    brochures: [{ label: "Niyasa Brochure", file: "Niyasa Brochure.pdf" }],
   },
   {
     slug: "nidhara",
@@ -264,6 +279,13 @@ export const properties: Property[] = [
         "With its strategic location, premium features, and seamless connectivity, Nidhara is more than just a home—it's a lifestyle. Embrace luxury and tranquility at Nidhara, your dream home in Buroshibtala, New Alipore.",
       ],
     },
+    brochures: [
+      { label: "Nidhara Mobile Brochure", file: "Nidhara Mobile Brochure.pdf" },
+      { label: "Nidhara E-Flyer", file: "Nidhara E Flyer.pdf" },
+      { label: "Nidhara Brochure (Horizontal)", file: "Nidhara Brochure Horizontal.pdf" },
+      { label: "Nidhara Floor Plan Brochure", file: "Nidhara Floor Plan Brochure.pdf" },
+      { label: "Nidhara Project Details", file: "Nidhara Project Details.pdf" },
+    ],
   },
   {
     slug: "ps-aurus",
@@ -312,6 +334,7 @@ export const properties: Property[] = [
         "In summary, PS Aurus offers an unrivaled residential experience, seamlessly blending luxury, connectivity, and tranquility in the heart of Kolkata's dynamic EM Bypass. With its top-tier amenities, spacious apartments, and proximity to iconic landmarks like Science City and ITC Royal Bengal, PS Aurus stands out as a premier address for those seeking a sophisticated and comfortable lifestyle.",
       ],
     },
+    brochures: [{ label: "PS Aurus Brochure", file: "PS Aurus Brochure.pdf" }],
   },
   {
     slug: "ps-sansara",
@@ -367,6 +390,7 @@ export const properties: Property[] = [
         "PS Sansara offers an extraordinary living experience characterised by luxurious riverfront residences, a prime location on Gola Bari Road, and excellent connectivity to key areas in Kolkata. Whether you are searching for a spacious 3BHK, 4BHK, or 5BHK duplex apartment, PS Sansara by PS Group ensures an unparalleled lifestyle.",
       ],
     },
+    brochures: [{ label: "PS Sansara Brochure", file: "PS Sansara Brochure.pdf" }],
   },
   {
     slug: "ps-quintessa",
