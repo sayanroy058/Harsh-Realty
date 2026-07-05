@@ -22,7 +22,7 @@ import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
+import { Route as ProjectsSlugRouteImport } from './routes/projects_.$slug'
 
 const Vinayak21AcresRoute = Vinayak21AcresRouteImport.update({
   id: '/vinayak-21-acres',
@@ -90,9 +90,9 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ProjectsRoute,
+  id: '/projects_/$slug',
+  path: '/projects/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -107,7 +107,7 @@ export interface FileRoutesByFullPath {
   '/hoabl-the-sarayu': typeof HoablTheSarayuRoute
   '/locations': typeof LocationsRoute
   '/ongoing': typeof OngoingRoute
-  '/projects': typeof ProjectsRouteWithChildren
+  '/projects': typeof ProjectsRoute
   '/vinayak-21-acres': typeof Vinayak21AcresRoute
   '/projects/$slug': typeof ProjectsSlugRoute
 }
@@ -123,7 +123,7 @@ export interface FileRoutesByTo {
   '/hoabl-the-sarayu': typeof HoablTheSarayuRoute
   '/locations': typeof LocationsRoute
   '/ongoing': typeof OngoingRoute
-  '/projects': typeof ProjectsRouteWithChildren
+  '/projects': typeof ProjectsRoute
   '/vinayak-21-acres': typeof Vinayak21AcresRoute
   '/projects/$slug': typeof ProjectsSlugRoute
 }
@@ -140,9 +140,9 @@ export interface FileRoutesById {
   '/hoabl-the-sarayu': typeof HoablTheSarayuRoute
   '/locations': typeof LocationsRoute
   '/ongoing': typeof OngoingRoute
-  '/projects': typeof ProjectsRouteWithChildren
+  '/projects': typeof ProjectsRoute
   '/vinayak-21-acres': typeof Vinayak21AcresRoute
-  '/projects/$slug': typeof ProjectsSlugRoute
+  '/projects_/$slug': typeof ProjectsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -192,7 +192,7 @@ export interface FileRouteTypes {
     | '/ongoing'
     | '/projects'
     | '/vinayak-21-acres'
-    | '/projects/$slug'
+    | '/projects_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -207,8 +207,9 @@ export interface RootRouteChildren {
   HoablTheSarayuRoute: typeof HoablTheSarayuRoute
   LocationsRoute: typeof LocationsRoute
   OngoingRoute: typeof OngoingRoute
-  ProjectsRoute: typeof ProjectsRouteWithChildren
+  ProjectsRoute: typeof ProjectsRoute
   Vinayak21AcresRoute: typeof Vinayak21AcresRoute
+  ProjectsSlugRoute: typeof ProjectsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -304,27 +305,15 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects/$slug': {
-      id: '/projects/$slug'
-      path: '/$slug'
+    '/projects_/$slug': {
+      id: '/projects_/$slug'
+      path: '/projects/$slug'
       fullPath: '/projects/$slug'
       preLoaderRoute: typeof ProjectsSlugRouteImport
-      parentRoute: typeof ProjectsRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface ProjectsRouteChildren {
-  ProjectsSlugRoute: typeof ProjectsSlugRoute
-}
-
-const ProjectsRouteChildren: ProjectsRouteChildren = {
-  ProjectsSlugRoute: ProjectsSlugRoute,
-}
-
-const ProjectsRouteWithChildren = ProjectsRoute._addFileChildren(
-  ProjectsRouteChildren,
-)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -338,8 +327,9 @@ const rootRouteChildren: RootRouteChildren = {
   HoablTheSarayuRoute: HoablTheSarayuRoute,
   LocationsRoute: LocationsRoute,
   OngoingRoute: OngoingRoute,
-  ProjectsRoute: ProjectsRouteWithChildren,
+  ProjectsRoute: ProjectsRoute,
   Vinayak21AcresRoute: Vinayak21AcresRoute,
+  ProjectsSlugRoute: ProjectsSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

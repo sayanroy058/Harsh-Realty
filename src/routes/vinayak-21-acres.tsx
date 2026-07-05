@@ -5,7 +5,7 @@ import vinayak from "@/assets/vinayak-hero.jpg";
 import interior from "@/assets/interior-1.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
-import { EnquiryForm } from "./projects.$slug";
+import { EnquiryForm } from "./projects_.$slug";
 import { Leaf, TreePine, Sun, Mountain } from "lucide-react";
 
 export const Route = createFileRoute("/vinayak-21-acres")({

@@ -5,7 +5,7 @@ import sarayu from "@/assets/sarayu-hero.jpg";
 import interior from "@/assets/interior-1.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
-import { EnquiryForm } from "./projects.$slug";
+import { EnquiryForm } from "./projects_.$slug";
 
 export const Route = createFileRoute("/hoabl-the-sarayu")({
   head: () => ({

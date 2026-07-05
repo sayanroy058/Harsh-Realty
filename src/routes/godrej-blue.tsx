@@ -6,7 +6,7 @@ import interior from "@/assets/interior-1.jpg";
 import tower from "@/assets/tower-night.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
-import { EnquiryForm } from "./projects.$slug";
+import { EnquiryForm } from "./projects_.$slug";
 import { Droplet, Waves, Sparkles, Building2 } from "lucide-react";
 
 export const Route = createFileRoute("/godrej-blue")({
