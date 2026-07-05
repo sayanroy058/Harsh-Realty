@@ -3,7 +3,7 @@ import { properties } from "@/lib/properties";
 import { propertyImages } from "@/lib/propertyImages";
 import { Reveal } from "@/components/site/Reveal";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, Download } from "lucide-react";
 
 export const Route = createFileRoute("/projects_/$slug")({
   head: ({ params }) => {
@@ -176,6 +176,32 @@ function ProjectDetail() {
               {p.overview.paragraphs.map((para, index) => (
                 <Reveal key={index} delay={index * 0.05}>
                   <p className="text-foreground/70 leading-relaxed">{para}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {p.brochures && p.brochures.length > 0 && (
+        <section className="px-6 pb-24">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4">
+                — Downloads
+              </p>
+            </Reveal>
+            <div className="grid md:grid-cols-2 gap-3">
+              {p.brochures.map((b, index) => (
+                <Reveal key={b.file} delay={index * 0.03}>
+                  <a
+                    href={`/brochures/${p.slug}/${encodeURIComponent(b.file)}`}
+                    download
+                    className="glass rounded-xl p-5 flex items-center gap-3 h-full hover:border-gold/40 transition-colors"
+                  >
+                    <Download size={16} className="text-gold shrink-0" />
+                    <span className="text-sm leading-relaxed">{b.label}</span>
+                  </a>
                 </Reveal>
               ))}
             </div>

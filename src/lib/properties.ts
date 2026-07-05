@@ -438,6 +438,7 @@ export const properties: Property[] = [
         "PS Quintessa is the epitome of luxury living in North Kolkata, offering an exclusive community, state-of-the-art amenities, and an unparalleled lifestyle. Whether you're looking for a luxurious home for your family or a smart investment, PS Quintessa checks all the boxes. With a prime location and a prestigious developer behind it, this project promises a life of luxury and convenience.",
       ],
     },
+    brochures: [{ label: "Quintessa Brochure", file: "Quintessa Brochure.pdf" }],
   },
   {
     slug: "merlin-f-residencies",
@@ -484,6 +485,10 @@ export const properties: Property[] = [
         "F Residences at Jogardanga More, Rajarhat combines luxury, modern design, and strategic location, presenting a top-tier option for homebuyers looking for upscale living and for investors seeking high-value opportunities in Kolkata.",
       ],
     },
+    brochures: [
+      { label: "F Residences Mini Brochure", file: "F Residences Mini Brochure.pdf" },
+      { label: "Merlin F Floor Plan", file: "Merlin F Floor Plan.pdf" },
+    ],
   },
   {
     slug: "ps-navyom",
@@ -531,6 +536,7 @@ export const properties: Property[] = [
         "PS Navyom is not just a residential project; it's a lifestyle destination that blends luxury, convenience, and tranquility. Whether you seek a spacious family home or a tranquil retreat in Kolkata's heart, PS Navyom is the perfect choice.",
       ],
     },
+    brochures: [{ label: "Navyom Booklet", file: "Navyom Booklet.pdf" }],
   },
 ];
 
