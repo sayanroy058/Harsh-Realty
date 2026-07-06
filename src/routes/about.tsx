@@ -46,7 +46,7 @@ function About() {
               residence in Rajarhat to a 4,000 sq ft sky home on EM Bypass.
             </p>
             <div className="mt-10 flex gap-12">
-              {[["12+", "Years"], ["800+", "Families"], ["7", "Corridors"]].map(([n, l]) => (
+              {[["12+", "Years"], ["100+", "Families"], ["7", "Corridors"]].map(([n, l]) => (
                 <div key={l}>
                   <p className="font-display text-4xl text-gold">{n}</p>
                   <p className="text-xs text-foreground/50 mt-1 tracking-wider uppercase">{l}</p>
@@ -113,7 +113,7 @@ function About() {
             <p className="text-xs tracking-[0.4em] text-gold uppercase mb-6">— Counted</p>
             <h2 className="font-display text-4xl md:text-5xl">Numbers we are willing to claim.</h2>
           </div>
-          {[[800, "+", "Families"], [25, "+", "Towers"], [12, "yr", "Practice"]].map(([n, s, l]) => (
+          {[[100, "+", "Families"], [25, "+", "Towers"], [12, "yr", "Practice"]].map(([n, s, l]) => (
             <Reveal key={l as string}>
               <div className="text-center md:text-left">
                 <Counter to={n as number} suffix={s as string} />

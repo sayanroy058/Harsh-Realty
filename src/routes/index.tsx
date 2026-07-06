@@ -133,7 +133,7 @@ function Stats() {
     { n: 25, s: "+", l: "Curated residences" },
     { n: 12, s: "+", l: "Years of practice" },
     { n: 7, s: "", l: "Premium corridors" },
-    { n: 800, s: "+", l: "Families settled" },
+    { n: 100, s: "+", l: "Families settled" },
   ];
   return (
     <section className="relative py-32 px-6">
