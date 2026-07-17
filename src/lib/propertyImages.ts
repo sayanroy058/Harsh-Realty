@@ -13,6 +13,12 @@ import emamiBusinessBay from "@/assets/Properties/emami-business-bay.jpg";
 import keventerOne from "@/assets/Properties/keventer-one.jpg";
 import merlinWorldTradeCentre from "@/assets/Properties/merlin-world-trade-centre.jpg";
 import psHarbourOne from "@/assets/Properties/ps-harbour-one.jpg";
+import sanctuary from "@/assets/Properties/sanctuary.jpg";
+import ambujaUtpalaa from "@/assets/Properties/ambuja-utpalaa.png";
+import edenDevprayag from "@/assets/Properties/eden-devprayag.jpg";
+import merlinIvy from "@/assets/Properties/merlin-ivy.jpg";
+import srijanTownsquare from "@/assets/Properties/srijan-townsquare.jpg";
+import jeevika from "@/assets/Properties/jeevika.png";
 import placeholder from "@/assets/Properties/placeholder.svg";
 
 export const propertyImages: Record<string, string> = {
@@ -26,11 +32,11 @@ export const propertyImages: Record<string, string> = {
   "ps-quintessa": psQuintessa,
   "merlin-f-residencies": merlinFResidency,
   "ps-navyom": psNavyom,
-  "ambuja-utpalaa": placeholder,
+  "ambuja-utpalaa": ambujaUtpalaa,
   "ambuja-udyatt": placeholder,
-  "eden-devprayag": placeholder,
-  "merlin-ivy": placeholder,
-  "srijan-townsquare": placeholder,
+  "eden-devprayag": edenDevprayag,
+  "merlin-ivy": merlinIvy,
+  "srijan-townsquare": srijanTownsquare,
   jeevika: placeholder,
   "emami-aamod": placeholder,
   "purti-tatsam": placeholder,
@@ -38,7 +44,7 @@ export const propertyImages: Record<string, string> = {
   "dtc-still-waters": placeholder,
   "siddha-sky": placeholder,
   "srijan-natura": placeholder,
-  sanctuary: placeholder,
+  sanctuary,
   "ps-harbour-one": psHarbourOne,
   "merlin-summit": merlinSummit,
   "emami-business-bay": emamiBusinessBay,
