@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 import { Mail, Phone, Instagram, Facebook, Linkedin, MapPin } from "lucide-react";
+import narLogo from "@/assets/memberships/nar-logo.jpg";
+import recaLogo from "@/assets/memberships/reca-logo.png";
 
 const navLinks = [
   ["About", "/about"],
@@ -87,6 +89,25 @@ export function Footer() {
             >
               Enquire Now
             </Link>
+          </div>
+        </div>
+
+        {/* memberships */}
+        <div className="mt-10 pt-6 border-t border-gold/8 flex flex-col sm:flex-row items-center gap-4">
+          <p className="text-[9px] uppercase tracking-[0.35em] text-gold/80">
+            Proud members of
+          </p>
+          <div className="flex items-center gap-5">
+            <img
+              src={narLogo}
+              alt="NAR India — National Association of Realtors"
+              className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+            />
+            <img
+              src={recaLogo}
+              alt="RECA — Real Estate Consultants Association"
+              className="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+            />
           </div>
         </div>
 
