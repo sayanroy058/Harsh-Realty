@@ -14,11 +14,18 @@ import keventerOne from "@/assets/Properties/keventer-one.jpg";
 import merlinWorldTradeCentre from "@/assets/Properties/merlin-world-trade-centre.jpg";
 import psHarbourOne from "@/assets/Properties/ps-harbour-one.jpg";
 import sanctuary from "@/assets/Properties/sanctuary.jpg";
-import ambujaUtpalaa from "@/assets/Properties/ambuja-utpalaa.png";
+import ambujaUtpalaa from "@/assets/Properties/ambuja-utpalaa.webp";
 import edenDevprayag from "@/assets/Properties/eden-devprayag.jpg";
 import merlinIvy from "@/assets/Properties/merlin-ivy.jpg";
 import srijanTownsquare from "@/assets/Properties/srijan-townsquare.jpg";
 import jeevika from "@/assets/Properties/jeevika.png";
+import emamiAamod from "@/assets/Properties/emami-aamod.jpg";
+import ambujaUdyatt from "@/assets/Properties/ambuja-udyatt.png";
+import purtiTatsam from "@/assets/Properties/purti-tatsam.jpg";
+import sohamPravya from "@/assets/Properties/soham-pravya.jpg";
+import dtcStillWaters from "@/assets/Properties/dtc-still-waters.jpg";
+import siddhaSky from "@/assets/Properties/siddha-sky.jpg";
+import srijanNatura from "@/assets/Properties/srijan-natura.jpg";
 import placeholder from "@/assets/Properties/placeholder.svg";
 
 export const propertyImages: Record<string, string> = {
@@ -33,17 +40,17 @@ export const propertyImages: Record<string, string> = {
   "merlin-f-residencies": merlinFResidency,
   "ps-navyom": psNavyom,
   "ambuja-utpalaa": ambujaUtpalaa,
-  "ambuja-udyatt": placeholder,
+  "ambuja-udyatt": ambujaUdyatt,
   "eden-devprayag": edenDevprayag,
   "merlin-ivy": merlinIvy,
   "srijan-townsquare": srijanTownsquare,
   jeevika,
-  "emami-aamod": placeholder,
-  "purti-tatsam": placeholder,
-  "soham-pravya": placeholder,
-  "dtc-still-waters": placeholder,
-  "siddha-sky": placeholder,
-  "srijan-natura": placeholder,
+  "emami-aamod": emamiAamod,
+  "purti-tatsam": purtiTatsam,
+  "soham-pravya": sohamPravya,
+  "dtc-still-waters": dtcStillWaters,
+  "siddha-sky": siddhaSky,
+  "srijan-natura": srijanNatura,
   sanctuary,
   "ps-harbour-one": psHarbourOne,
   "merlin-summit": merlinSummit,
