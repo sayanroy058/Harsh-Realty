@@ -5,6 +5,7 @@ import { Mail, Phone, Instagram, Facebook, Linkedin, MapPin } from "lucide-react
 const navLinks = [
   ["About", "/about"],
   ["Projects", "/projects"],
+  ["Commercial", "/commercial"],
   ["Ongoing", "/ongoing"],
   ["Gallery", "/gallery"],
   ["Insights", "/blog"],

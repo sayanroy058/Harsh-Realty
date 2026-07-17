@@ -24,7 +24,7 @@ export const Route = createFileRoute("/ongoing")({
 });
 
 function Ongoing() {
-  const list = properties.filter((p) => p.status === "ongoing");
+  const list = properties.filter((p) => p.status === "ongoing" && p.category !== "commercial");
   return (
     <>
       <PageHero

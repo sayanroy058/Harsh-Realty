@@ -18,6 +18,7 @@ import { Route as GodrejBlueRouteImport } from './routes/godrej-blue'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CompletedRouteImport } from './routes/completed'
+import { Route as CommercialRouteImport } from './routes/commercial'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
@@ -69,6 +70,11 @@ const CompletedRoute = CompletedRouteImport.update({
   path: '/completed',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommercialRoute = CommercialRouteImport.update({
+  id: '/commercial',
+  path: '/commercial',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CareersRoute = CareersRouteImport.update({
   id: '/careers',
   path: '/careers',
@@ -100,6 +106,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/careers': typeof CareersRoute
+  '/commercial': typeof CommercialRoute
   '/completed': typeof CompletedRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
@@ -116,6 +123,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/careers': typeof CareersRoute
+  '/commercial': typeof CommercialRoute
   '/completed': typeof CompletedRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
@@ -133,6 +141,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/careers': typeof CareersRoute
+  '/commercial': typeof CommercialRoute
   '/completed': typeof CompletedRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
@@ -151,6 +160,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/careers'
+    | '/commercial'
     | '/completed'
     | '/contact'
     | '/gallery'
@@ -167,6 +177,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/careers'
+    | '/commercial'
     | '/completed'
     | '/contact'
     | '/gallery'
@@ -183,6 +194,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/careers'
+    | '/commercial'
     | '/completed'
     | '/contact'
     | '/gallery'
@@ -200,6 +212,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRoute
   CareersRoute: typeof CareersRoute
+  CommercialRoute: typeof CommercialRoute
   CompletedRoute: typeof CompletedRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
@@ -277,6 +290,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CompletedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/commercial': {
+      id: '/commercial'
+      path: '/commercial'
+      fullPath: '/commercial'
+      preLoaderRoute: typeof CommercialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/careers': {
       id: '/careers'
       path: '/careers'
@@ -320,6 +340,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BlogRoute: BlogRoute,
   CareersRoute: CareersRoute,
+  CommercialRoute: CommercialRoute,
   CompletedRoute: CompletedRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,

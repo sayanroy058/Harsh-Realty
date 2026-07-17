@@ -27,7 +27,7 @@ export const Route = createFileRoute("/completed")({
 });
 
 function Completed() {
-  const list = properties.filter((property) => property.status === "completed");
+  const list = properties.filter((property) => property.status === "completed" && property.category !== "commercial");
 
   return (
     <>

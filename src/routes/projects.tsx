@@ -31,9 +31,10 @@ function Projects() {
   const [filter, setFilter] = useState<(typeof filters)[number]>("All");
 
   const list = useMemo(() => {
-    if (filter === "All") return properties;
+    const residential = properties.filter((p) => p.category !== "commercial");
+    if (filter === "All") return residential;
     const map = { Ongoing: "ongoing", Completed: "completed" } as const;
-    return properties.filter((p) => p.status === map[filter]);
+    return residential.filter((p) => p.status === map[filter]);
   }, [filter]);
 
   return (

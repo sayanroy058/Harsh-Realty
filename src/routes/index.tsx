@@ -16,6 +16,7 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Reveal, FadeIn } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { properties, flagships } from "@/lib/properties";
+import { getPropertyImage } from "@/lib/propertyImages";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -210,7 +211,7 @@ function Flagships() {
 }
 
 function Showcase() {
-  const featured = properties.slice(0, 6);
+  const featured = properties.filter((p) => p.category !== "commercial").slice(0, 6);
   const imgs = {
     "npr-visaaya": nprVisaaya,
     "primarc-aadvika": primarcAadvika,
@@ -240,7 +241,7 @@ function Showcase() {
               <Link to="/projects/$slug" params={{ slug: p.slug }} className="group block">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                   <img
-                    src={imgs[p.slug as keyof typeof imgs]}
+                    src={imgs[p.slug as keyof typeof imgs] ?? getPropertyImage(p.slug)}
                     alt={p.name}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
