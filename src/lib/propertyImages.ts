@@ -8,6 +8,11 @@ import psSansara from "@/assets/Properties/PS Sansara.jpg";
 import psQuintessa from "@/assets/Properties/PS Quintessa.avif";
 import merlinFResidency from "@/assets/Properties/Merlin F Residencies.jpg";
 import psNavyom from "@/assets/Properties/PS Navyom.jpg";
+import merlinSummit from "@/assets/Properties/merlin-summit.jpg";
+import emamiBusinessBay from "@/assets/Properties/emami-business-bay.jpg";
+import keventerOne from "@/assets/Properties/keventer-one.jpg";
+import merlinWorldTradeCentre from "@/assets/Properties/merlin-world-trade-centre.jpg";
+import psHarbourOne from "@/assets/Properties/ps-harbour-one.jpg";
 import placeholder from "@/assets/Properties/placeholder.svg";
 
 export const propertyImages: Record<string, string> = {
@@ -34,11 +39,11 @@ export const propertyImages: Record<string, string> = {
   "siddha-sky": placeholder,
   "srijan-natura": placeholder,
   sanctuary: placeholder,
-  "ps-harbour-one": placeholder,
-  "merlin-summit": placeholder,
-  "emami-business-bay": placeholder,
-  "keventer-one": placeholder,
-  "merlin-world-trade-centre": placeholder,
+  "ps-harbour-one": psHarbourOne,
+  "merlin-summit": merlinSummit,
+  "emami-business-bay": emamiBusinessBay,
+  "keventer-one": keventerOne,
+  "merlin-world-trade-centre": merlinWorldTradeCentre,
 };
 
 export const getPropertyImage = (slug: string): string =>
