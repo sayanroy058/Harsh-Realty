@@ -37,7 +37,7 @@ export const propertyImages: Record<string, string> = {
   "eden-devprayag": edenDevprayag,
   "merlin-ivy": merlinIvy,
   "srijan-townsquare": srijanTownsquare,
-  jeevika: placeholder,
+  jeevika,
   "emami-aamod": placeholder,
   "purti-tatsam": placeholder,
   "soham-pravya": placeholder,
