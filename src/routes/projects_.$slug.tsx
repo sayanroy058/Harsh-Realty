@@ -1,9 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { properties } from "@/lib/properties";
 import { propertyImages } from "@/lib/propertyImages";
+import { getPropertyGalleryImages } from "@/lib/propertyGalleryImages";
 import { Reveal } from "@/components/site/Reveal";
-import { motion } from "framer-motion";
-import { Check, Download } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check, Download, X } from "lucide-react";
+import { useState } from "react";
 
 export const Route = createFileRoute("/projects_/$slug")({
   head: ({ params }) => {
@@ -229,6 +231,8 @@ function ProjectDetail() {
         </div>
       </section>
 
+      <PropertyGallery slug={p.slug} name={p.name} />
+
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl glass-strong rounded-3xl p-10 md:p-16 grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -272,5 +276,72 @@ export function EnquiryForm({ name }: { name: string }) {
         Request callback
       </button>
     </form>
+  );
+}
+
+function PropertyGallery({ slug, name }: { slug: string; name: string }) {
+  const images = getPropertyGalleryImages(slug);
+  const [open, setOpen] = useState<string | null>(null);
+
+  if (images.length === 0) return null;
+
+  return (
+    <section className="px-6 pb-24">
+      <div className="mx-auto max-w-6xl">
+        <Reveal>
+          <p className="text-xs tracking-[0.4em] uppercase text-gold mb-4">
+            — Gallery
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl leading-tight mb-10">
+            Inside {name}.
+          </h2>
+        </Reveal>
+        <div className="columns-1 gap-4 space-y-4 sm:columns-2 lg:columns-3">
+          {images.map((src, index) => (
+            <Reveal key={src} delay={(index % 6) * 0.05}>
+              <button
+                onClick={() => setOpen(src)}
+                className="group block w-full break-inside-avoid overflow-hidden rounded-2xl"
+              >
+                <img
+                  src={src}
+                  alt={`${name} gallery image ${index + 1}`}
+                  loading="lazy"
+                  className="w-full object-cover transition-all duration-700 group-hover:scale-105 aspect-[4/3]"
+                />
+              </button>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setOpen(null)}
+            className="fixed inset-0 z-[100] grid place-items-center bg-ink/95 p-6 backdrop-blur-xl"
+          >
+            <motion.img
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.95 }}
+              src={open}
+              alt={`${name} enlarged gallery image`}
+              className="max-h-[90vh] max-w-[90vw] rounded-2xl shadow-2xl"
+            />
+            <button
+              onClick={() => setOpen(null)}
+              className="absolute right-6 top-6 grid h-12 w-12 place-items-center rounded-full bg-gold text-ink"
+              aria-label="Close image"
+            >
+              <X />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
   );
 }
